@@ -1,0 +1,12 @@
+---
+const { text, link, textSize } = Astro.props;
+---
+
+<a
+  href={link}
+  target="_blank"
+  rel="noopener noreferrer"
+  class={`${textSize} bg-buttonbg px-4 py-2 rounded-lg border-font2 border transform transition-transform duration-300 hover:scale-110`}
+>
+  {text}
+</a>

@@ -1,0 +1,57 @@
+---
+import Buttons from "./Buttons.astro";
+
+const projects = [
+  {
+    title: "Example Project",
+    description:
+      "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
+    img: "/assets/project1.png",
+  },
+  {
+    title: "Example Project",
+    description:
+      "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
+    img: "/assets/project1.png",
+  },
+];
+---
+
+<section class="pb-36 md:p-20">
+  <div class="flex flex-col gap-28">
+    {
+      projects.map((project, index) => (
+        <div
+          class={`flex flex-col md:flex-row items-center gap-14 ${index === 1 ? "md:flex-row-reverse" : ""}`}
+        >
+          <div class="flex flex-col gap-7 text-center md:text-left w-[90%]  md:w-1/2">
+            <div>
+              <h2 class="text-font2 text-base">Featured Project</h2>
+              <h3 class="text-font3 text-[24px] md:text-[34px] font-semibold">
+                {project.title}
+              </h3>
+            </div>
+            <div class="max-w-full md:max-w-[669px] bg-bgcolor">
+              <p class="text-font3 text-lg">{project.description}</p>
+            </div>
+            <div class="inline-flex justify-center md:justify-start gap-x-4">
+              <Buttons
+                textSize="text-base"
+                text="Demo"
+                link="https://javierazagra.com"
+              />
+              <Buttons text="GitHub" link="https://github.com/javiiazagra" />
+            </div>
+          </div>
+          <div class="w-full md:w-1/2">
+            <img
+              src={project.img}
+              alt={project.title}
+              class="w-full object-cover"
+            />
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

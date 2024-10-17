@@ -1,0 +1,53 @@
+---
+import Buttons from "./Buttons.astro";
+
+const experiences = [
+  {
+    img: "/assets/experience1.png",
+    title: "CIB on the Mobile",
+    description:
+      "Take your client onboard seamlessly by our amazing tool of digital onboard process.",
+  },
+  {
+    img: "/assets/experience1.png",
+    title: "CIB on the Mobile",
+    description:
+      "Take your client onboard seamlessly by our amazing tool of digital onboard process.",
+  },
+  {
+    img: "/assets/experience1.png",
+    title: "CIB on the Mobile",
+    description:
+      "Take your client onboard seamlessly by our amazing tool of digital onboard process.",
+  },
+  {
+    img: "/assets/experience1.png",
+    title: "CIB on the Mobile",
+    description:
+      "Take your client onboard seamlessly by our amazing tool of digital onboard process.",
+  },
+];
+---
+
+<section class="text-white pb-36 flex flex-col gap-12">
+  <div class="text-[40px]">
+    <h2>Work Experience</h2>
+  </div>
+  <!-- Usamos grid-cols-1 para pantallas pequeñas y grid-cols-2 para pantallas de 1200px o más -->
+  <div class="grid grid-cols-1 xl:grid-cols-2 gap-[30px]">
+    {
+      experiences.map((experience) => (
+        <div class="w-[570px] h-[192px] bg-[linear-gradient(128deg,rgba(19,4,40,1)_7%,rgba(56,18,109,1)_100%,rgba(25,6,52,1)_100%)] rounded-2xl border-font2 border-[0.5px] flex items-center pl-16 gap-6">
+          <div>
+            <img src={experience.img} alt={experience.title} />
+          </div>
+          <div class="font-semibold flex flex-col gap-4 items-start">
+            <h3 class="text-[26px]">{experience.title}</h3>
+            <p class="text-[10px] max-w-[232px]">{experience.description}</p>
+            <Buttons textSize="text-[10px]" text="LEAR MORE" />
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
